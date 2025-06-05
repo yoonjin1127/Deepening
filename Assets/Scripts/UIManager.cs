@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private InventoryManager inventoryManager;
 
     // 스탯, 인벤토리 창
+    [Header("스탯, 인벤토리 창")]
     [SerializeField] private GameObject statusUI;
     [SerializeField] private GameObject inventoryUI;
 

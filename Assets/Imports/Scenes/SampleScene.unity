@@ -6373,6 +6373,10 @@ MonoBehaviour:
   defense: 40
   health: 100
   critical: 25
+  attackText: {fileID: 1324086623}
+  defenseText: {fileID: 1179050163}
+  healthText: {fileID: 1062211217}
+  criticalText: {fileID: 200280004}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
