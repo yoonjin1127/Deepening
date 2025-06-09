@@ -103,6 +103,6 @@ public class InventoryManager : Singleton<InventoryManager>
         }
 
         // ui °»½Å
-        UIManager.Instance.slotCount.text = itemCount.ToString("N0");
+        UIManager.Instance.slotCount.text = itemCount.ToString();
     }
 }

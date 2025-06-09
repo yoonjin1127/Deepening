@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class InventorySlot : MonoBehaviour
 {
     [SerializeField] private Image icon;
-    [SerializeField] private GameObject EquipText;
+    [SerializeField] private GameObject EquipImage;
     private ItemData itemData;
 
     // ¿Â¬¯ ø©∫Œ
@@ -51,7 +51,7 @@ public class InventorySlot : MonoBehaviour
     // ¿Â¬¯
     public void EquipItem()
     {
-        EquipText.SetActive(true);
+        EquipImage.SetActive(true);
         status.ApplyItem(itemData);
         isEquipped = true;
     }
@@ -59,7 +59,7 @@ public class InventorySlot : MonoBehaviour
     // ¿Â¬¯ «ÿ¡¶
     public void UnEquipItem()
     {
-        EquipText.SetActive(false);
+        EquipImage.SetActive(false);
         status.RemoveItem(itemData);
         isEquipped = false;
     }
