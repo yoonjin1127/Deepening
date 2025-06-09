@@ -4471,6 +4471,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1324086621}
   m_CullTransparentMesh: 1
+--- !u!1 &1347162999
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1347163002}
+  - component: {fileID: 1347163001}
+  - component: {fileID: 1347163000}
+  m_Layer: 0
+  m_Name: GameManger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1347163000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347162999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f12309ea21e30e4487fb8b947fc4285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1347163001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347162999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feca0b0f46366c84ba3659aa3b560a36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1347163002
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347162999}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 822.7702, y: 527.9663, z: -5.8276978}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1375531604
 GameObject:
   m_ObjectHideFlags: 0
@@ -5515,6 +5572,10 @@ MonoBehaviour:
   statusUI: {fileID: 23692595}
   inventoryUI: {fileID: 1257177563}
   buttons: {fileID: 1304432452}
+  attackText: {fileID: 1324086623}
+  defenseText: {fileID: 1179050163}
+  healthText: {fileID: 1062211217}
+  criticalText: {fileID: 200280004}
 --- !u!4 &1762988446
 Transform:
   m_ObjectHideFlags: 0
@@ -6325,7 +6386,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2114640925}
-  - component: {fileID: 2114640926}
   m_Layer: 5
   m_Name: CharacterInfo
   m_TagString: Untagged
@@ -6357,26 +6417,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2114640926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2114640924}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f12309ea21e30e4487fb8b947fc4285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attack: 35
-  defense: 40
-  health: 100
-  critical: 25
-  attackText: {fileID: 1324086623}
-  defenseText: {fileID: 1179050163}
-  healthText: {fileID: 1062211217}
-  criticalText: {fileID: 200280004}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -6389,3 +6429,4 @@ SceneRoots:
   - {fileID: 1257177567}
   - {fileID: 991856982}
   - {fileID: 1762988446}
+  - {fileID: 1347163002}

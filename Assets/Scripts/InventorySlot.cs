@@ -14,11 +14,12 @@ public class InventorySlot : MonoBehaviour
     // 장착 중인지 확인하는 읽기 전용
     public bool IsEquipped() => isEquipped;
 
+
     // 현재 슬롯에 들어 있는 아이템
     private ItemData currentItem = null;
 
-    private PlayerStatus status;
 
+    private PlayerStatus status;
     private InventoryManager inventoryManager;
 
     private void Start()
@@ -60,6 +61,7 @@ public class InventorySlot : MonoBehaviour
         isEquipped = false;
     }
 
+    // 슬롯을 클릭했을 때 장착
     public void OnClickSlot()
     {
         if (itemData == null) return;

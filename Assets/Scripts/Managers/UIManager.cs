@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
-public class UIManager : MonoBehaviour
+public class UIManager : Singleton<UIManager>
 {
     [SerializeField] private InventoryManager inventoryManager;
 
@@ -13,6 +14,18 @@ public class UIManager : MonoBehaviour
 
     // 가려지는 버튼
     [SerializeField] private GameObject buttons;
+
+    [Header("스탯 텍스트")]
+    public TextMeshProUGUI attackText;
+    public TextMeshProUGUI defenseText;
+    public TextMeshProUGUI healthText;
+    public TextMeshProUGUI criticalText;
+
+    private void Awake()
+    {
+        // 싱글톤 초기화
+        base.Awake();
+    }
 
     // 아이템 랜덤 뽑기 버튼
     public void OnClickSpawn()

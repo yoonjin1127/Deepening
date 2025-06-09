@@ -25,6 +25,7 @@ public class InventoryManager : MonoBehaviour
         CreateSlots(slotCount);
     }
 
+    // 초기 슬롯 생성 및 리스트 추가
     public void CreateSlots(int count)
     {
         for (int i = 0; i < count; i++)
@@ -35,7 +36,7 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    // 슬롯 클릭 시 중복 착용 못 하게 하기
+    // 슬롯 클릭 시 아이템 중복 착용 못 하게 하기
     public void OnSlotClicked(InventorySlot clickedSlot)
     {
         // 현재 착용한 아이템이 있고, 클릭한 슬롯이 장착한 슬롯이 아닐 때
