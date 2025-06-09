@@ -22,6 +22,7 @@ public class UIManager : Singleton<UIManager>
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI criticalText;
     public TextMeshProUGUI goldText;
+    public TextMeshProUGUI playerInfo;
 
     protected override void Awake()
     {

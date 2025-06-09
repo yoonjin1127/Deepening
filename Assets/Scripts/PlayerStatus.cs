@@ -8,7 +8,17 @@ public class PlayerStatus : Singleton<PlayerStatus>
     public int defense { get; private set; } = 40;
     public int health { get; private set; } = 100;
     public float critical { get; private set; } = 25;
+
     public int gold { get; private set; } = 20000;
+
+    public int level { get; private set; } = 1;
+    public int exp { get; private set; } = 0;
+    public int requiredExp { get; private set; } = 100;
+
+    private void Start()
+    {
+        UIManager.Instance.playerInfo.text = "귀여운 전사입니다. 아이템을 뽑고 장착하는 것 외에는 할 줄 아는 행동이 없습니다.";
+    }
 
     // 아이템 장착
     public void ApplyItem(ItemData item)
@@ -54,4 +64,8 @@ public class PlayerStatus : Singleton<PlayerStatus>
             return false;
         }
     }
+
+    // 경험치 증가
+
+    // 레벨 업
 }
