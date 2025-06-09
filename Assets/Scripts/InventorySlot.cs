@@ -18,14 +18,8 @@ public class InventorySlot : MonoBehaviour
     // 현재 슬롯에 들어 있는 아이템
     private ItemData currentItem = null;
 
-
-    private PlayerStatus status;
-    private InventoryManager inventoryManager;
-
     private void Start()
     {
-        status = FindObjectOfType<PlayerStatus>();
-        inventoryManager = FindObjectOfType<InventoryManager>();
         GetComponent<Button>().onClick.AddListener(OnClickSlot);
     }
 
@@ -45,14 +39,14 @@ public class InventorySlot : MonoBehaviour
         isEquipped = false;
 
         // 슬롯 개수 세기
-        inventoryManager.OnItemAdd();
+        InventoryManager.Instance.OnItemAdd();
     }
 
     // 장착
     public void EquipItem()
     {
         EquipImage.SetActive(true);
-        status.ApplyItem(itemData);
+        PlayerStatus.Instance.ApplyItem(itemData);
         isEquipped = true;
     }
 
@@ -60,7 +54,7 @@ public class InventorySlot : MonoBehaviour
     public void UnEquipItem()
     {
         EquipImage.SetActive(false);
-        status.RemoveItem(itemData);
+        PlayerStatus.Instance.RemoveItem(itemData);
         isEquipped = false;
     }
 
@@ -79,6 +73,6 @@ public class InventorySlot : MonoBehaviour
         }
 
         // 인벤토리 매니저에 현재 상태 전달
-        inventoryManager.OnSlotClicked(this);
+        InventoryManager.Instance.OnSlotClicked(this);
     }
 }

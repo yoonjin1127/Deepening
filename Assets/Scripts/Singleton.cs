@@ -27,7 +27,18 @@ public class Singleton<T> : MonoBehaviour where T : Component
             if (_instance == null)
             {
                 _instance = FindObjectOfType<T>();  // 씬에 이미 존재하는 T타입 객체 탐색
-                Create(true);   // 없으면 생성(DontDestroyOnLoad)
+
+                if(_instance == null)
+                {
+                    Create(true);   // 없으면 생성(DontDestroyOnLoad)
+                }
+
+                else
+                {
+                    // 씬에 이미 있었지만 DontDestroyOnLoad가 안 됐을 수 있음
+                    DontDestroyOnLoad(_instance.gameObject);
+                }
+                
             }
             return _instance;
         }
@@ -82,6 +93,17 @@ public class Singleton<T> : MonoBehaviour where T : Component
             return; // 에디터 모드에서는 무시
         }
 
-        _instance = this as T;  // 현재 컴포넌트를 T타입으로 캐스팅하여 저장
+        if (_instance == null)
+        {
+            _instance = this as T;  // 현재 컴포넌트를 T타입으로 캐스팅하여 저장
+
+            // 씬에 배치되어 있든 자동 생성되든, 무조건 유지
+            DontDestroyOnLoad(gameObject);
+        }
+
+        else if (_instance != this)
+        {
+            Destroy(gameObject);
+        }
     }
 }
