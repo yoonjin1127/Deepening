@@ -21,7 +21,7 @@ public class UIManager : Singleton<UIManager>
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI criticalText;
 
-    private void Awake()
+    protected override void Awake()
     {
         // ΩÃ±€≈Ê √ ±‚»≠
         base.Awake();

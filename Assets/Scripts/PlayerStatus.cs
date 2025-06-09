@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class PlayerStatus : MonoBehaviour
+public class PlayerStatus : Singleton<PlayerStatus>
 {
     // [Header("플레이어 스탯")]
     public int attack { get; private set; } = 35;
