@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryManager : MonoBehaviour
+public class InventoryManager : Singleton<InventoryManager>
 {
     [SerializeField] private GameObject slotPrefab;
     [SerializeField] private Transform slotParent;
@@ -53,6 +53,15 @@ public class InventoryManager : MonoBehaviour
     // 아이템 뽑기
     public void TryAddRandomItem()
     {
+        // 뽑기 비용
+        int gatchaCost = 1000;
+
+        // 골드가 충분한지 확인
+        if(!PlayerStatus.Instance.TrySpendGold(gatchaCost))
+        {
+            return;
+        }
+
         // 빈 슬롯 찾기
         InventorySlot emptySlot = null;
 
@@ -78,5 +87,22 @@ public class InventoryManager : MonoBehaviour
 
         // 슬롯에 아이템 넣기
         emptySlot.SetItem(randomItem);
+    }
+
+    // 아이템 슬롯 개수 세기
+    public void OnItemAdd()
+    {
+        int itemCount = 0;
+
+        foreach(InventorySlot slot in slotList)
+        {
+            if(slot.HasItem())
+            {
+                itemCount++;
+            }
+        }
+
+        // ui 갱신
+        UIManager.Instance.slotCount.text = itemCount.ToString("N0");
     }
 }

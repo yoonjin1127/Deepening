@@ -43,6 +43,9 @@ public class InventorySlot : MonoBehaviour
         icon.sprite = itemData.icon;
         icon.gameObject.SetActive(true);
         isEquipped = false;
+
+        // ½½·Ô °³¼ö ¼¼±â
+        inventoryManager.OnItemAdd();
     }
 
     // ÀåÂø

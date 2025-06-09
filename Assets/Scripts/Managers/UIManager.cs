@@ -11,6 +11,7 @@ public class UIManager : Singleton<UIManager>
     [Header("스탯, 인벤토리 창")]
     [SerializeField] private GameObject statusUI;
     [SerializeField] private GameObject inventoryUI;
+    public TextMeshProUGUI slotCount;
 
     // 가려지는 버튼
     [SerializeField] private GameObject buttons;
@@ -20,6 +21,7 @@ public class UIManager : Singleton<UIManager>
     public TextMeshProUGUI defenseText;
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI criticalText;
+    public TextMeshProUGUI goldText;
 
     protected override void Awake()
     {

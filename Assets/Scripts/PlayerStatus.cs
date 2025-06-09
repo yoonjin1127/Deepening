@@ -37,4 +37,21 @@ public class PlayerStatus : Singleton<PlayerStatus>
         UIManager.Instance.healthText.text = health.ToString();
         UIManager.Instance.criticalText.text = critical.ToString();
     }
+
+    // 골드 소모
+    public bool TrySpendGold(int amount)
+    {
+        if(gold >= amount)
+        {
+            gold -= amount;
+            UIManager.Instance.goldText.text = gold.ToString("N0");
+            return true;
+        }
+
+        else
+        {
+            Debug.Log("골드가 부족합니다.");
+            return false;
+        }
+    }
 }
