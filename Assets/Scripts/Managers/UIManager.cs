@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : Singleton<UIManager>
 {
@@ -24,10 +25,15 @@ public class UIManager : Singleton<UIManager>
     public TextMeshProUGUI goldText;
     public TextMeshProUGUI playerInfo;
 
+    [Header("레벨, 경험치")]
+    public Slider expSlider;
+    public TextMeshProUGUI levelText;
+
     protected override void Awake()
     {
         // 싱글톤 초기화
         base.Awake();
+        expSlider.value = 0;
     }
 
     // 아이템 랜덤 뽑기 버튼
@@ -62,5 +68,13 @@ public class UIManager : Singleton<UIManager>
     {
         inventoryUI.SetActive(false);
         buttons.SetActive(true);
+    }
+
+    // 경험치, 레벨 ui 갱신
+    public void UpdateExpUI(int curExp, int maxExp)
+    {
+        expSlider.maxValue = maxExp;
+        expSlider.value = curExp;
+        levelText.text = PlayerStatus.Instance.level.ToString();
     }
 }

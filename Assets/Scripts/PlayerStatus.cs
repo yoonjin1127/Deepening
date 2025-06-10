@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 
 public class PlayerStatus : Singleton<PlayerStatus>
@@ -17,7 +16,7 @@ public class PlayerStatus : Singleton<PlayerStatus>
 
     private void Start()
     {
-        UIManager.Instance.playerInfo.text = "귀여운 전사입니다. 아이템을 뽑고 장착하는 것 외에는 할 줄 아는 행동이 없습니다.";
+        UIManager.Instance.playerInfo.text = "귀여운 전사입니다. 아이템을 뽑고 장착하는 것 외에는 할 줄 아는 행동이 없습니다.\n아이템을 뽑을 때마다 경험치가 증가합니다.";
     }
 
     // 아이템 장착
@@ -66,6 +65,23 @@ public class PlayerStatus : Singleton<PlayerStatus>
     }
 
     // 경험치 증가
+    public void ExpUp(int amount)
+    {
+        exp += amount;
+
+        while(exp >= requiredExp)
+        {
+            exp -= requiredExp;
+            LevelUp();
+        }
+
+        UIManager.Instance.UpdateExpUI(exp, requiredExp);
+    }
 
     // 레벨 업
+    public void LevelUp()
+    {
+        level++;
+        Debug.Log("레벨 업!");
+    }
 }

@@ -5961,6 +5961,8 @@ MonoBehaviour:
   criticalText: {fileID: 200280004}
   goldText: {fileID: 735938421}
   playerInfo: {fileID: 1630810073}
+  expSlider: {fileID: 901771129}
+  levelText: {fileID: 1209316692}
 --- !u!4 &1762988446
 Transform:
   m_ObjectHideFlags: 0

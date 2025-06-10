@@ -40,6 +40,8 @@ public class InventorySlot : MonoBehaviour
 
         // ½½·Ô °³¼ö ¼¼±â
         InventoryManager.Instance.OnItemAdd();
+
+        PlayerStatus.Instance.ExpUp(25);
     }
 
     // ÀåÂø
